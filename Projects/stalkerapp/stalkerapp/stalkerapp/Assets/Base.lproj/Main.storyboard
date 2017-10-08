@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KgT-G9-miT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DissmissVC-->
+        <scene sceneID="2UD-02-GMG">
+            <objects>
+                <viewController id="sVs-uI-4Nd" customClass="DissmissVC" customModule="stalkerapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="kKn-GB-KbW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VEk-y3-auz">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLk-ZQ-52C">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <connections>
+                                        <action selector="dismissPopup:" destination="sVs-uI-4Nd" eventType="touchUpInside" id="Y3K-wF-x3A"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ed-d8-sA8" customClass="DesignableView" customModule="stalkerapp" customModuleProvider="target">
+                                    <rect key="frame" x="68" y="234" width="240" height="200"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popuplogo" translatesAutoresizingMaskIntoConstraints="NO" id="iaY-oT-1zA">
+                                            <rect key="frame" x="36" y="-50" width="167" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="b8a-XJ-fA2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="blO-9o-9UG">
+                                            <rect key="frame" x="10" y="41" width="220" height="118.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type the email to be stalked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFn-ZJ-hUO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZpY-Y6-S9V">
+                                                    <rect key="frame" x="0.0" y="39.5" width="220" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VHq-hn-51y">
+                                                    <rect key="frame" x="0.0" y="88.5" width="220" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2W-jS-k9H">
+                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                                            <state key="normal" title="Cancel">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="dismissButtonPresed:" destination="sVs-uI-4Nd" eventType="touchUpInside" id="uwb-cr-MY9"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYd-6G-TT3">
+                                                            <rect key="frame" x="110" y="0.0" width="110" height="30"/>
+                                                            <state key="normal" title="Stalk">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.82191985845565796" green="0.2046453058719635" blue="0.11194708198308945" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="iaY-oT-1zA" firstAttribute="top" secondItem="7ed-d8-sA8" secondAttribute="top" constant="-50" id="1HP-La-y05"/>
+                                        <constraint firstAttribute="width" constant="240" id="KJQ-iL-hwz"/>
+                                        <constraint firstItem="iaY-oT-1zA" firstAttribute="leading" secondItem="7ed-d8-sA8" secondAttribute="leading" constant="36" id="PVH-ax-iql"/>
+                                        <constraint firstItem="iaY-oT-1zA" firstAttribute="centerX" secondItem="7ed-d8-sA8" secondAttribute="centerX" id="R1e-7l-zNT"/>
+                                        <constraint firstItem="blO-9o-9UG" firstAttribute="leading" secondItem="7ed-d8-sA8" secondAttribute="leading" constant="10" id="R9d-Ka-707"/>
+                                        <constraint firstItem="blO-9o-9UG" firstAttribute="centerY" secondItem="7ed-d8-sA8" secondAttribute="centerY" id="Tuc-qR-foB"/>
+                                        <constraint firstAttribute="height" constant="200" id="Wyu-bu-Mxl"/>
+                                        <constraint firstItem="blO-9o-9UG" firstAttribute="centerX" secondItem="7ed-d8-sA8" secondAttribute="centerX" id="bGw-NV-9fR"/>
+                                        <constraint firstAttribute="trailing" secondItem="blO-9o-9UG" secondAttribute="trailing" constant="10" id="rfz-Ca-KRi"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="7ed-d8-sA8" firstAttribute="centerY" secondItem="VEk-y3-auz" secondAttribute="centerY" id="Kg2-f6-ks1"/>
+                                <constraint firstItem="NLk-ZQ-52C" firstAttribute="top" secondItem="VEk-y3-auz" secondAttribute="top" id="Qxj-8I-8qG"/>
+                                <constraint firstAttribute="bottom" secondItem="NLk-ZQ-52C" secondAttribute="bottom" id="WVx-YC-lVa"/>
+                                <constraint firstAttribute="trailing" secondItem="NLk-ZQ-52C" secondAttribute="trailing" id="dU1-2Q-rXg"/>
+                                <constraint firstItem="7ed-d8-sA8" firstAttribute="centerX" secondItem="VEk-y3-auz" secondAttribute="centerX" id="xHg-9Y-c0G"/>
+                                <constraint firstItem="NLk-ZQ-52C" firstAttribute="leading" secondItem="VEk-y3-auz" secondAttribute="leading" id="xI7-fI-9JJ"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="dark"/>
+                    </visualEffectView>
+                    <connections>
+                        <outlet property="email" destination="ZpY-Y6-S9V" id="WgD-6i-RzZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLf-op-ybK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352.8" y="879.31034482758628"/>
+        </scene>
+        <!--Stalker app-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="stalkerapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.21176470588235294" green="0.20000000000000001" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stalker app" id="wxV-tx-Nfb">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="koR-4w-XOS"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="binoculars" id="Ev0-zr-jnP">
+                            <connections>
+                                <segue destination="sVs-uI-4Nd" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="dJm-yN-tjL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="WPB-kK-7Vs" kind="show" id="H7I-hJ-xZf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352.8" y="-23.838080959520241"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dhJ-VD-Gmf">
+            <objects>
+                <viewController id="WPB-kK-7Vs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7ZZ-IN-x1S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.21122756600379944" green="0.20026546716690063" blue="0.18681028485298157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="s6j-50-eDv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yr6-VN-SfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2282" y="-23"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cip-wJ-GM1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KgT-G9-miT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zQu-T8-BJ8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.86752039194107056" green="0.14296603202819824" blue="0.035369075834751129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ktl-0d-vNS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="avz-MP-GFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508.80000000000001" y="-22.488755622188908"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="binoculars" width="35" height="23"/>
+        <image name="popuplogo" width="79" height="79"/>
+    </resources>
+</document>

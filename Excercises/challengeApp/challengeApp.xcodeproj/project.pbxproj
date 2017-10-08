@@ -317,6 +317,7 @@
 				ECD6B84D1F39F03000A8C941 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
