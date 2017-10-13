@@ -67,7 +67,6 @@ class Client {
                     let socialMediaArray = value as! [[String:AnyObject]]
                     for (socialMediaDict) in socialMediaArray{
                     
-                        print(socialMediaDict)
                         
                         let typeName = socialMediaDict["typeName"]
                         let url = socialMediaDict["url"]
@@ -77,8 +76,9 @@ class Client {
                         }else{
                             username = socialMediaDict["userid"]! as! String
                         }
-                        var socialMediaObj = SocialMedia(typeName: typeName! as! String, url: url! as! String, username: url! as! String, context: (LocalDB.shared.stack?.context)!)
+                        var socialMediaObj = SocialMedia(typeName: typeName! as! String, url: url! as! String, username: username as! String, context: (LocalDB.shared.stack?.context)!)
                         socialMediaObj.person = person
+                        socialMediaObj.date = Date()
                         socialMedias.append(socialMediaObj)
                         
                     }
