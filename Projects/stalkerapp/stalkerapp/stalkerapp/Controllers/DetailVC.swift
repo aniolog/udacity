@@ -28,6 +28,18 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         super.viewDidLoad()
         socialMediasTable.dataSource = self
         socialMediasTable.delegate = self
+        let image = UIImage(data: (person?.photo)!)
+        personAvatar.image = roundedImage(from: image!, radius: 65)
+        
+        let rightButton = UIButton.init(type: .custom)
+        rightButton.setTitle("Menu", for: .normal)
+        rightButton.setTitleColor(UIColor.white, for: .normal)
+        rightButton.addTarget(self, action: #selector(self.openMenu), for: UIControlEvents.touchUpInside)
+        rightButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        rightButton.imageView?.contentMode = .scaleAspectFit
+        let rightBarButton = UIBarButtonItem(customView: rightButton)
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
         self.navigationItem.title = person?.fullName
         guard let ageText:String = person?.age! else {
             return
@@ -55,17 +67,56 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SocialMediaTableViewCell
         let socialMedia = socialMedias[indexPath.row]
-        print(socialMedia.typeName)
-        cell.textLabel?.text = socialMedia.typeName
-        cell.detailTextLabel?.text = socialMedia.username
+        cell.title.text = socialMedia.typeName
+        guard let username = socialMedia.username else{
+            cell.username.text = "@"
+            return cell
+        }
+        let nameImage:String = socialMedia.typeName!.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
+        cell.logo.image = UIImage(named: nameImage.lowercased())
+        cell.username.text = "@\(username)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(socialMedias.count)
         return socialMedias.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let socialMediaUrl = socialMedias[indexPath.row].url
+        let url = URL(string: socialMediaUrl!)
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
+    
+    @objc func openMenu()  {
+        let menuController = UIAlertController(title:nil, message:nil, preferredStyle: .actionSheet)
+        
+        
+        guard let fullname = person!.fullName else{
+           
+            return
+        }
+        
+        let addressButton = UIAlertAction(title: "Check \(fullname)'s address", style: .default, handler: { (action) -> Void in
+            let addressVC =  self.storyboard?.instantiateViewController(withIdentifier:  "address") as! AddresVC
+            addressVC.person = self.person
+            self.navigationController?.pushViewController(addressVC, animated: true)
+        })
+        let deleteButton = UIAlertAction(title: "Delete \(fullname) from the history", style: .destructive, handler: { (action) -> Void in
+            LocalDB.shared.stack?.context.delete(self.person!)
+            self.navigationController?.popViewController(animated: true)
+        })
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+            print("Delete button tapped")
+        })
+        menuController.addAction(addressButton)
+        menuController.addAction(deleteButton)
+        menuController.addAction(cancelButton)
+        self.present(menuController, animated: true, completion: nil)
+        
+        
     }
     
 }

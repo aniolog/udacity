@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2430051F92578A0092E3EB /* SocialMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2430041F92578A0092E3EB /* SocialMediaTableViewCell.swift */; };
+		9F2430071F93E55C0092E3EB /* AddresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2430061F93E55C0092E3EB /* AddresVC.swift */; };
+		9F2430091F93ED070092E3EB /* VCUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2430081F93ED070092E3EB /* VCUtil.swift */; };
+		9F24300B1F93F1520092E3EB /* StalkerPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24300A1F93F1520092E3EB /* StalkerPin.swift */; };
+		9F2430111F9416680092E3EB /* SocialMedia+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24300D1F9416680092E3EB /* SocialMedia+CoreDataProperties.swift */; };
+		9F2430131F9416680092E3EB /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24300F1F9416680092E3EB /* Person+CoreDataProperties.swift */; };
 		9F289F911F8AC348008F4872 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F289F901F8AC348008F4872 /* MapKit.framework */; };
 		9F289F941F8AC7C7008F4872 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F289F921F8AC7C7008F4872 /* Model.xcdatamodeld */; };
 		9F289FA01F8ACB4A008F4872 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F289F9F1F8ACB4A008F4872 /* CoreDataStack.swift */; };
@@ -21,14 +27,18 @@
 		9F3B74711F8A92FD00115F55 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B74701F8A92FD00115F55 /* PopUpVC.swift */; };
 		9F71E79B1F8ABBF400550CAC /* ContactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71E79A1F8ABBF400550CAC /* ContactClient.swift */; };
 		9F935AC91F8AD69E004F7695 /* SocialMedia+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935AC51F8AD69E004F7695 /* SocialMedia+CoreDataClass.swift */; };
-		9F935ACA1F8AD69E004F7695 /* SocialMedia+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935AC61F8AD69E004F7695 /* SocialMedia+CoreDataProperties.swift */; };
 		9F935ACB1F8AD69E004F7695 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935AC71F8AD69E004F7695 /* Person+CoreDataClass.swift */; };
-		9F935ACC1F8AD69E004F7695 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935AC81F8AD69E004F7695 /* Person+CoreDataProperties.swift */; };
 		9F935ACE1F8AFED6004F7695 /* StalkedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935ACD1F8AFED6004F7695 /* StalkedTableViewCell.swift */; };
 		9F935AD01F8B0117004F7695 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F935ACF1F8B0117004F7695 /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F2430041F92578A0092E3EB /* SocialMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTableViewCell.swift; sourceTree = "<group>"; };
+		9F2430061F93E55C0092E3EB /* AddresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddresVC.swift; sourceTree = "<group>"; };
+		9F2430081F93ED070092E3EB /* VCUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCUtil.swift; sourceTree = "<group>"; };
+		9F24300A1F93F1520092E3EB /* StalkerPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StalkerPin.swift; sourceTree = "<group>"; };
+		9F24300D1F9416680092E3EB /* SocialMedia+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SocialMedia+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9F24300F1F9416680092E3EB /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9F289F901F8AC348008F4872 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9F289F931F8AC7C7008F4872 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9F289F9F1F8ACB4A008F4872 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -45,9 +55,7 @@
 		9F3B74701F8A92FD00115F55 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
 		9F71E79A1F8ABBF400550CAC /* ContactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactClient.swift; sourceTree = "<group>"; };
 		9F935AC51F8AD69E004F7695 /* SocialMedia+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SocialMedia+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9F935AC61F8AD69E004F7695 /* SocialMedia+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SocialMedia+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9F935AC71F8AD69E004F7695 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9F935AC81F8AD69E004F7695 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9F935ACD1F8AFED6004F7695 /* StalkedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StalkedTableViewCell.swift; sourceTree = "<group>"; };
 		9F935ACF1F8B0117004F7695 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,10 +114,10 @@
 		9F3B74691F8A717F00115F55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9F24300D1F9416680092E3EB /* SocialMedia+CoreDataProperties.swift */,
+				9F24300F1F9416680092E3EB /* Person+CoreDataProperties.swift */,
 				9F935AC51F8AD69E004F7695 /* SocialMedia+CoreDataClass.swift */,
-				9F935AC61F8AD69E004F7695 /* SocialMedia+CoreDataProperties.swift */,
 				9F935AC71F8AD69E004F7695 /* Person+CoreDataClass.swift */,
-				9F935AC81F8AD69E004F7695 /* Person+CoreDataProperties.swift */,
 				9F289F921F8AC7C7008F4872 /* Model.xcdatamodeld */,
 				9F289F9F1F8ACB4A008F4872 /* CoreDataStack.swift */,
 				9F289FA11F8ACF40008F4872 /* LocalDB.swift */,
@@ -124,6 +132,8 @@
 				9F3B74701F8A92FD00115F55 /* PopUpVC.swift */,
 				9F289FA31F8AD019008F4872 /* CoreDateTableViewController.swift */,
 				9F935ACF1F8B0117004F7695 /* DetailVC.swift */,
+				9F2430061F93E55C0092E3EB /* AddresVC.swift */,
+				9F2430081F93ED070092E3EB /* VCUtil.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +153,8 @@
 			children = (
 				9F3B746D1F8A90D700115F55 /* Designables */,
 				9F935ACD1F8AFED6004F7695 /* StalkedTableViewCell.swift */,
+				9F2430041F92578A0092E3EB /* SocialMediaTableViewCell.swift */,
+				9F24300A1F93F1520092E3EB /* StalkerPin.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,18 +248,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2430111F9416680092E3EB /* SocialMedia+CoreDataProperties.swift in Sources */,
 				9F3B74591F8A70E100115F55 /* HistoryVC.swift in Sources */,
 				9F289FA41F8AD019008F4872 /* CoreDateTableViewController.swift in Sources */,
 				9F935ACE1F8AFED6004F7695 /* StalkedTableViewCell.swift in Sources */,
 				9F71E79B1F8ABBF400550CAC /* ContactClient.swift in Sources */,
 				9F3B74571F8A70E100115F55 /* AppDelegate.swift in Sources */,
+				9F24300B1F93F1520092E3EB /* StalkerPin.swift in Sources */,
 				9F289FA01F8ACB4A008F4872 /* CoreDataStack.swift in Sources */,
-				9F935ACA1F8AD69E004F7695 /* SocialMedia+CoreDataProperties.swift in Sources */,
+				9F2430051F92578A0092E3EB /* SocialMediaTableViewCell.swift in Sources */,
 				9F3B746F1F8A910400115F55 /* DesignableView.swift in Sources */,
+				9F2430071F93E55C0092E3EB /* AddresVC.swift in Sources */,
 				9F289FA21F8ACF40008F4872 /* LocalDB.swift in Sources */,
+				9F2430131F9416680092E3EB /* Person+CoreDataProperties.swift in Sources */,
 				9F935ACB1F8AD69E004F7695 /* Person+CoreDataClass.swift in Sources */,
 				9F3B74711F8A92FD00115F55 /* PopUpVC.swift in Sources */,
-				9F935ACC1F8AD69E004F7695 /* Person+CoreDataProperties.swift in Sources */,
+				9F2430091F93ED070092E3EB /* VCUtil.swift in Sources */,
 				9F935AD01F8B0117004F7695 /* DetailVC.swift in Sources */,
 				9F289F941F8AC7C7008F4872 /* Model.xcdatamodeld in Sources */,
 				9F935AC91F8AD69E004F7695 /* SocialMedia+CoreDataClass.swift in Sources */,

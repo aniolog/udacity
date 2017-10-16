@@ -19,10 +19,25 @@ class HistoryVC: CoreDataTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        func preparePhoto(cell: StalkedTableViewCell,photoData:Data){
+            let image = UIImage(data: photoData)
+            cell.photo.image = self.roundedImage(from: image!, radius: 60)
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for:indexPath) as! StalkedTableViewCell
         let person = fetchedResultsController?.object(at: indexPath) as! Person
         cell.name.text = person.fullName
         cell.email.text = person.email
+        if (person.photo != nil ){
+            preparePhoto(cell: cell,photoData: person.photo!)
+        }else{
+            Client.shared.getPhotoData(person: person){
+                () in
+                preparePhoto(cell: cell,photoData: person.photo!)
+            }
+        }
+       
         return cell
     }
     

@@ -2,7 +2,7 @@
 //  SocialMedia+CoreDataProperties.swift
 //  stalkerapp
 //
-//  Created by Carlos Lozano on 10/8/17.
+//  Created by Carlos Lozano on 10/15/17.
 //  Copyright © 2017 Carlos Lozano. All rights reserved.
 //
 //
