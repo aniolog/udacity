@@ -41,13 +41,20 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         self.navigationItem.rightBarButtonItem = rightBarButton
         
         self.navigationItem.title = person?.fullName
-        guard let ageText:String = person?.age! else {
-            return
+        
+        if(person?.age != nil){
+            guard let ageText:String = person?.age! else {
+                return
+            }
+            guard let ageRangeText: String = person?.ageRange else {
+                return
+            }
+            self.age.text = "Age: \(ageText) (\(ageRangeText))"
+        }else{
+            self.age.text = ""
         }
-        guard let ageRangeText: String = person?.ageRange else {
-            return
-        }
-        self.age.text = "Age: \(ageText) (\(ageRangeText))"
+      
+        
      
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SocialMedia")
         
@@ -99,11 +106,15 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
             return
         }
         
-        let addressButton = UIAlertAction(title: "Check \(fullname)'s address", style: .default, handler: { (action) -> Void in
-            let addressVC =  self.storyboard?.instantiateViewController(withIdentifier:  "address") as! AddresVC
-            addressVC.person = self.person
-            self.navigationController?.pushViewController(addressVC, animated: true)
-        })
+        if (person?.address != nil){
+            let addressButton = UIAlertAction(title: "Check \(fullname)'s address", style: .default, handler: { (action) -> Void in
+                let addressVC =  self.storyboard?.instantiateViewController(withIdentifier:  "address") as! AddresVC
+                addressVC.person = self.person
+                self.navigationController?.pushViewController(addressVC, animated: true)
+            })
+            menuController.addAction(addressButton)
+        }
+      
         let deleteButton = UIAlertAction(title: "Delete \(fullname) from the history", style: .destructive, handler: { (action) -> Void in
             LocalDB.shared.stack?.context.delete(self.person!)
             self.navigationController?.popViewController(animated: true)
@@ -111,7 +122,6 @@ class DetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
             print("Delete button tapped")
         })
-        menuController.addAction(addressButton)
         menuController.addAction(deleteButton)
         menuController.addAction(cancelButton)
         self.present(menuController, animated: true, completion: nil)

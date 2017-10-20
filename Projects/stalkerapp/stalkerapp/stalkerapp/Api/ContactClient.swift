@@ -53,7 +53,7 @@ class Client {
         
         
         let session = URLSession.shared
-        let request = URLRequest(url: prepareParameters(parameters))
+        let request = prepareRequest(url: prepareParameters(parameters))
         
         let task = session.dataTask(with: request){
             (data,response,error) in
@@ -76,13 +76,15 @@ class Client {
                     let socialProfiles = responseData!["socialProfiles"] as! [String:AnyObject]
                     let demographics = responseData!["demographics"] as! [String:AnyObject]
                     let photos = responseData!["photos"] as! [String:AnyObject]
-                    let locationDeduced = demographics["locationDeduced"] as! [String:AnyObject]
+                    let locationDeduced = demographics["locationDeduced"] as? [String:AnyObject]
                   
-                    person.age = demographics["age"] as! String
+                    person.age = demographics["age"] as? String
                     person.gender = demographics["gender"] as! String
-                    person.ageRange = (demographics["ageRange"] as! String)
+                    person.ageRange = (demographics["ageRange"] as? String)
                     person.fullName = contactInfo["fullName"] as! String
-                    person.address = locationDeduced["deducedLocation"] as! String
+                    if(locationDeduced != nil){
+                        person.address = locationDeduced!["deducedLocation"] as? String
+                    }
                     
                     // MARK: Photo setting
                     if(photos.keys.count>0){
@@ -109,7 +111,11 @@ class Client {
                             if let usernameTest = socialMediaDict["username"] {
                                 username = usernameTest as! String
                             }else{
-                                username = socialMediaDict["userid"]! as! String
+                                if let userIdTest = socialMediaDict["userid"] {
+                                    username = userIdTest as! String
+                                }else{
+                                    username = ""
+                                }
                             }
                             var socialMediaObj = SocialMedia(typeName: typeName! as! String, url: url! as! String, username: username as! String, context: (LocalDB.shared.stack?.context)!)
                             socialMediaObj.person = person
@@ -144,7 +150,6 @@ class Client {
         components.scheme = Client.FullContact.APIScheme
         components.host = Client.FullContact.APIHost
         components.path = Client.FullContact.APIPath
-        components.port = Client.FullContact.APIPort
         components.queryItems = [URLQueryItem]()
         
         for (key, value) in parameters {
@@ -169,11 +174,9 @@ class Client {
 
 extension Client {
     struct FullContact {
-        static let APIScheme = "http"
-        static let APIHost = "gopayonline.co"
-        static let APIPath = "/contact/contact.json"
-        static let APIPort = 8088
-        
+        static let APIScheme = "https"
+        static let APIHost = "api.fullcontact.com"
+        static let APIPath = "/v2/person.json"
     }
     
     // MARK: Flickr Parameter Keys
@@ -183,11 +186,11 @@ extension Client {
     }
     
     struct HeadersKeys{
-        static let Authorization = "Authorization"
+        static let Authorization = "X-FullContact-APIKey"
     }
     
     struct HeaderValues{
-        static let Authorization = "email"
+        static let Authorization = "b62915cfed1bb3e1"
     }
     
     // MARK: Flickr Parameter Values
